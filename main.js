@@ -6,13 +6,13 @@ function setup() {
   classifier = ml5.imageClassifier('MobileNet',modelLoaded);
 }
 function modelLoaded() {
-  console.log(modelLoaded);
+  console.log('Model Loaded!');
 }
 function draw() {
   image(video,0,0,300,300);
   classifier.classify(video ,gotResult);
 }
-function gotResult(results ,error) {
+function gotResult(error ,results) {
   if(error){
     console.error(error);
   }else{
